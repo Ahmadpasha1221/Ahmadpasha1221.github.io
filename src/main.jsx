@@ -60,11 +60,11 @@ const projects = [
 
 const skills = ["PYTHON", "DJANGO", "DRF", "FRAPPE", "ERPNEXT", "MARIADB", "MYSQL", "JAVASCRIPT", "REST APIs", "SOAP", "XML", "JSON", "GIT", "LINUX", "POSTMAN"];
 
-function Marquee({ children, reverse=false, className="" }) {
+function Marquee({ children, reverse = false, className = "" }) {
   return (
     <div className={`marquee ${reverse ? "marquee--reverse" : ""} ${className}`} aria-hidden="true">
       <div className="marquee__track">
-        {[0,1,2,3].map((i) => <span key={i}>{children}</span>)}
+        {[0, 1, 2, 3].map((i) => <span key={i}>{children}</span>)}
       </div>
     </div>
   );
@@ -82,7 +82,7 @@ function SpiderCore() {
         <div className="core-ring ring-b" />
         <div className="core-ring ring-c" />
         <div className="core-eye">S</div>
-        {[...Array(8)].map((_, i) => <i className={`spider-leg leg-${i+1}`} key={i} />)}
+        {[...Array(8)].map((_, i) => <i className={`spider-leg leg-${i + 1}`} key={i} />)}
         <div className="core-label">SPIDER</div>
       </div>
       <div className="orbit orbit-a"><span>CONTEXT</span></div>
@@ -119,6 +119,14 @@ function App() {
     <div className="site">
       <div className="noise" />
       <a className="skip-link" href="#main">SKIP TO CONTENT</a>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" type="image/png" href="/spider-icon.png" />
+
+        <title>Ahmad Pasha — Software Developer</title>
+      </head>
 
       <header className="nav">
         <a href="#" className="brand">APS<span>®</span></a>
@@ -129,21 +137,21 @@ function App() {
           <a href="#contact">CONTACT</a>
         </nav>
         <button className="menu-button" onClick={() => setMenuOpen(v => !v)} aria-label="Toggle navigation">
-          {menuOpen ? <X size={25}/> : <Menu size={25}/>}
+          {menuOpen ? <X size={25} /> : <Menu size={25} />}
         </button>
       </header>
 
       <main id="main">
         <section className="hero" ref={heroRef}>
           <motion.div className="hero-copy" style={{ scale: heroScale, opacity: heroOpacity }}>
-            <div className="eyebrow"><span className="pulse" /> PYTHON SOFTWARE DEVELOPER · ELURU / INDIA</div>
+            <div className="eyebrow"><span className="pulse" /> PYTHON SOFTWARE DEVELOPER ·  INDIA</div>
             <h1>
               AHMAD
               <span className="hero-accent">PASHA</span>
             </h1>
             <div className="hero-bottom">
               <p>BUILDING ENTERPRISE SYSTEMS, AI-POWERED PRODUCTS AND SOFTWARE THAT TURNS COMPLEX OPERATIONS INTO SIMPLE WORKFLOWS.</p>
-              <a className="big-link" href="#work">ENTER THE WORK <ArrowDownRight size={28}/></a>
+              <a className="big-link" href="#work">ENTER THE WORK <ArrowDownRight size={28} /></a>
             </div>
           </motion.div>
           <div className="hero-number" aria-hidden="true">01</div>
@@ -158,7 +166,7 @@ function App() {
           <div className="intro-grid">
             <h2>I BUILD SOFTWARE WHERE <em>BUSINESS LOGIC</em> MEETS ENGINEERING.</h2>
             <div className="intro-text">
-              <p>Python software developer with 1.9+ years of hands-on experience across enterprise applications, AI-powered systems, SaaS platforms and middleware.</p>
+              <p>Python software developer with 2+ years of hands-on experience across enterprise applications, AI-powered systems, SaaS platforms and middleware.</p>
               <p>My work sits close to the operational layer: payroll, compliance, integrations, production migrations, workflows and developer tooling.</p>
               <div className="signature-line">PYTHON-FIRST. SYSTEM-MINDED. PRODUCT-FOCUSED.</div>
             </div>
@@ -175,7 +183,7 @@ function App() {
         <section id="work" className="work section">
           <SectionLabel number="02">SELECTED WORK</SectionLabel>
           <div className="work-intro">
-            <h2>REAL SYSTEMS.<br/><span>REAL CONSTRAINTS.</span></h2>
+            <h2>REAL SYSTEMS.<br /><span>REAL CONSTRAINTS.</span></h2>
             <p>Not just interfaces. Production software where reliability, data integrity and business rules matter.</p>
           </div>
           <div className="projects">
@@ -196,7 +204,7 @@ function App() {
                   <p>{project.text}</p>
                   <div className="project-actions">
                     <span className="stack">{project.stack}</span>
-                    {project.live && <a href={project.live} target="_blank" rel="noreferrer">GITHUB <ArrowUpRight size={18}/></a>}
+                    {project.live && <a href={project.live} target="_blank" rel="noreferrer">GITHUB <ArrowUpRight size={18} /></a>}
                   </div>
                 </div>
               </article>
@@ -209,15 +217,15 @@ function App() {
           <div className="spider-feature-grid">
             <div>
               <p className="feature-kicker">VS CODE · AI AGENT · OPEN SOURCE</p>
-              <h2>NOT A CHAT BOX.<br/><span>AN AGENT RUNTIME.</span></h2>
+              <h2>NOT A CHAT BOX.<br /><span>AN AGENT RUNTIME.</span></h2>
               <p className="feature-copy">Spider is designed around the engineering loop: understand the workspace, reason over context, execute tools, stream progress, ask for permission when needed, persist sessions and recover safely.</p>
               <div className="feature-points">
-                <div><Code2/><span>WORKSPACE CONTEXT + CODE INTELLIGENCE</span></div>
-                <div><Workflow/><span>STREAMING EVENTS + SESSION LIFECYCLE</span></div>
-                <div><Cpu/><span>MODEL / TOOL / RUNTIME ARCHITECTURE</span></div>
-                <div><Database/><span>PERMISSION + SAFETY CONTROLS</span></div>
+                <div><Code2 /><span>WORKSPACE CONTEXT + CODE INTELLIGENCE</span></div>
+                <div><Workflow /><span>STREAMING EVENTS + SESSION LIFECYCLE</span></div>
+                <div><Cpu /><span>MODEL / TOOL / RUNTIME ARCHITECTURE</span></div>
+                <div><Database /><span>PERMISSION + SAFETY CONTROLS</span></div>
               </div>
-              <a className="button-primary" href="https://github.com/Ahmadpasha1221/spider" target="_blank" rel="noreferrer">VIEW SPIDER ON GITHUB <ArrowUpRight/></a>
+              <a className="button-primary" href="https://github.com/Ahmadpasha1221/spider" target="_blank" rel="noreferrer">VIEW SPIDER ON GITHUB <ArrowUpRight /></a>
             </div>
             <SpiderCore />
           </div>
@@ -242,7 +250,7 @@ function App() {
         <section id="stack" className="stack-section">
           <SectionLabel number="05">TECHNICAL STACK</SectionLabel>
           <div className="skill-wall">
-            {skills.map((skill, i) => <span key={skill} style={{"--i": i}}>{skill}</span>)}
+            {skills.map((skill, i) => <span key={skill} style={{ "--i": i }}>{skill}</span>)}
           </div>
         </section>
 
@@ -257,15 +265,15 @@ function App() {
         <section id="contact" className="contact">
           <div className="contact-number">07</div>
           <p>HAVE A HARD PROBLEM?</p>
-          <h2>LET'S BUILD<br/><span>THE SYSTEM.</span></h2>
+          <h2>LET'S BUILD<br /><span>THE SYSTEM.</span></h2>
           <div className="contact-actions">
-            <a className="button-primary" href="mailto:ahmadpashashaiks@gmail.com">START A CONVERSATION <Mail/></a>
-            <a className="button-outline" href="/resume.pdf" download>DOWNLOAD RESUME <Download/></a>
+            <a className="button-primary" href="mailto:ahmadpashashaiks@gmail.com">START A CONVERSATION <Mail /></a>
+            <a className="button-outline" href="/resume.pdf" download>DOWNLOAD RESUME <Download /></a>
           </div>
           <div className="socials">
-            <a href="https://github.com/Ahmadpasha1221" target="_blank" rel="noreferrer"><Github/> GITHUB</a>
-            <a href="https://www.linkedin.com/in/ahmadpasha" target="_blank" rel="noreferrer"><Linkedin/> LINKEDIN</a>
-            <a href="mailto:ahmadpashashaiks@gmail.com"><Mail/> EMAIL</a>
+            <a href="https://github.com/Ahmadpasha1221" target="_blank" rel="noreferrer"><Github /> GITHUB</a>
+            <a href="https://www.linkedin.com/in/ahmadpasha" target="_blank" rel="noreferrer"><Linkedin /> LINKEDIN</a>
+            <a href="mailto:ahmadpashashaiks@gmail.com"><Mail /> EMAIL</a>
           </div>
         </section>
       </main>
